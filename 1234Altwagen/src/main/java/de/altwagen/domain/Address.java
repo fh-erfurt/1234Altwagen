@@ -2,13 +2,14 @@ package de.altwagen.domain;
 
 public class Address {
 
-    //Variablen erstmal alles public
-    int addressId = -1;
-    String country;
-    String city;
-    String postcode;
+    private int addressId = -1;
+    private String country;
+    private String city;
+    private String postcode;
+    private String street;
+    private String houseNumber;
 
-    public Address(String country, String city, String postcode, String street, String houseNumber) {
+	public Address(String country, String city, String postcode, String street, String houseNumber) {
         this.country = country;
         this.city = city;
         this.postcode = postcode;
@@ -16,10 +17,6 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
-    String street;
-    String houseNumber;
-
-    //Methoden erstmal alles public
     //Getter
     public int getAddressId(){
         return this.addressId;
@@ -27,9 +24,7 @@ public class Address {
     public String getCountry(){
         return this.country;
     };
-    public String getCity(){
-        return this.city;
-    };
+
     public String getPostCode(){
         return this.postcode;
     };
@@ -39,6 +34,8 @@ public class Address {
     public String getHouseNumber(){
         return this.houseNumber;
     };
+
+
     //Setter
     public void setAddressId(int adrId){
         this.addressId = adrId;

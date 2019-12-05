@@ -1,8 +1,7 @@
 package de.altwagen.user;
 
 import de.altwagen.domain.Address;
-import de.altwagen.domain.Request;
-import de.altwagen.user.User;
+import de.altwagen.Request.Request;
 
 public class Employee extends User {
 

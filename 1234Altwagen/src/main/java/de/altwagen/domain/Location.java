@@ -2,23 +2,24 @@ package de.altwagen.domain;
 
 public class Location {
 
-    //Variablen erstmal alles public
-    int locId;
-    Adress adress;
+    //Class variables all private
+    private int locId;
+    private Adress adress;
 
-    //Methoden erstmal alles public
+
     //Getter
-    public int getLocId(){
-      return this.locId;
-    };
+    public int getLocId(){ return this.locId; };
     public Adress getAdress(){
         return this.adress;
     };
+
+
     //Setter
-    public void setLocId(int locId){
-      this.locId = locId;
-    };
+    public void setLocId(int locId){ this.locId = locId; };
     public void setadress(Adress adress){
         this.adress = adress;
     };
+
+
+    //eine funktion zum ändern des standortes/zum aktualisieren?
 }
