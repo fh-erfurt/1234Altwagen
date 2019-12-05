@@ -2,21 +2,30 @@ package de.altwagen.domain;
 
 public class Car {
 
-    //Variablen erstmal alles public
-    int carId;
-    float price;
-    String constructionYear;
-    int drivenKM;
-    String brand;
-    String model;
-    String note;
-    Location location;
+    //Class variables all private
+    private int carId;
+    private float price;
+    private String constructionYear;
+    private int drivenKM;
+    private String brand;
+    private String model;
+    private String note;
+    private Location location;
+    private String status;
 
-    //Methoden erstmal alles public
+    //Constructor for Car
+    public Car(int carId,
+               float price,
+               String constructionYear,
+               int drivenKM, String brand,
+               String model, String note,
+               Location location,
+               String status) {
+    }
+
+
     //Getter
-    public int getCarId(){
-        return this.carId;
-    };
+    public int getCarId(){ return this.carId; };
     public float getPrice(){
         return this.price;
     };
@@ -38,8 +47,12 @@ public class Car {
     public Location getLocation(){
         return this.location;
     };
+    public String getStatus(){
+        return this.status;
+    };
 
-    //setter
+
+    //Setter
     public void setCarId(int carId){
       this.carId = carId;
     };
@@ -55,13 +68,15 @@ public class Car {
     public void setBrand(String brand){
         this.brand = brand;
     };
-    public void setModel(String model){
-        this.model = model;
-    };
+    public void setModel(String model){ this.model = model; };
     public void setNote(String note){
         this.note = note;
     };
     public void setLocation(Location location){
         this.location = location;
     };
+    public void setStatus(String status){
+        this.status = status;
+    };
+
 }

@@ -2,17 +2,41 @@ package de.altwagen.domain;
 
 public class Employee extends User{
 
-    //Variablen erstmal alles public
+    //Class variables all private
 
 
-    //Methoden erstmal alles public
-    public boolean sellCar(int price, int others){
-        return;
+    //Constructor for Employee because an error occured
+    public Employee(int userId,
+                    String firstname,
+                    String surename,
+                    String eMail,
+                    String passwort,
+                    Adress userAdress) {
+        super(userId,
+                firstname,
+                surename,
+                eMail,
+                passwort,
+                userAdress);
     }
+
+    //Accepts the Request
     public void acceptRequest(Request request){
-
+        if(request.getType() == TYPE.BUY){
+            request.setStatus(STATUS.SOLD); //When customer buys, we as the company sell
+        }
+        else{
+            request.setStatus((STATUS.BOUGHT)); //When customer sells, we as the company buy
+        }
     }
-    public void cancelRequest(Request request){
 
+    //Denies the request
+    public void denieRequest(Request request){
+        request.setStatus(STATUS.DENIED);
+    }
+
+    //deletes a sold car
+    public void deleteCar(Car car){
+    Controller.deleteCar(car);
     }
 }

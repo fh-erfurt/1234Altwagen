@@ -2,15 +2,24 @@ package de.altwagen.domain;
 
 public class User {
 
-    //Variablen erstmal alles public
-    int userId;
-    String firstname;
-    String surename;
-    String eMail;
-    String passwort;
-    Adress userAdress;
+    //Class variables all private
+    private int userId;
+    private String firstname;
+    private  String surename;
+    private  String eMail;
+    private  String passwort;
+    private   Adress userAdress;
 
-    //Methoden erstmal alles public
+    //Constructor for User
+    public User(int userId,
+                String firstname,
+                String surename,
+                String eMail,
+                String passwort,
+                Adress userAdress) {
+    }
+
+
     //Getter
     public int getUserId(){ return this.userId; }
     public String getFirstname(){ return this.firstname; }
@@ -26,6 +35,8 @@ public class User {
     public Adress getUserAdress(){
         return this.userAdress;
     }
+
+
     //Setter
     public void setUserId(int userId){ this.userId = userId; };
     public void setFirstname(String firstname){ this.firstname = firstname; };
