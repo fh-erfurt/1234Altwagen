@@ -12,6 +12,16 @@ public class Car {
     String note;
     Location location;
 
+    public Car(float price, String constructionYear, int drivenKM, String brand, String model, String note, Location location) {
+        this.price = price;
+        this.constructionYear = constructionYear;
+        this.drivenKM = drivenKM;
+        this.brand = brand;
+        this.model = model;
+        this.note = note;
+        this.location = location;
+    }
+
     //Methoden erstmal alles public
     //Getter
     public int getCarId(){
