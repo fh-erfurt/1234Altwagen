@@ -2,5 +2,7 @@ package de.altwagen.Request;
 
 public enum REQUEST_STATUS
 {
-    unassigned, accepted, denied;
+    pending,    // new request
+    accepted,   // employee accepted request
+    denied;     // employee denied request
 }

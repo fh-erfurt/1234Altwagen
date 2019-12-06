@@ -11,25 +11,42 @@ class ControllerTest {
     @Test
     void customerShouldBeRegistered() {
 
-        Address address = new Address("Deutschland", "Erfurt", "99085", "Altonaer Straße", "1");
-        User user = new Customer("Max", "Mustermann", "max.mustermann@fh-erfurt.de", "1234", address);
 
-        int userId = Controller.registerUser(user);
-        assertTrue(userId > 0, "Nutzer konnte nicht registriert werden!");
+        User user = Controller.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
+        assertTrue(user.getUserId() > 0, "customer should be registered!");
+        assertTrue( user instanceof Customer, "new user should be instance of Customer!");
     }
 
     @Test
     void customerShouldBeDeleted() {
 
-        Address address = new Address("Deutschland", "Erfurt", "99085", "Altonaer Straße", "1");
-        User user = new Customer("Max", "Mustermann", "max.mustermann@fh-erfurt.de", "1234", address);
+        User user = Controller.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
-        int userId = Controller.registerUser(user);
-
-        // Voraussetzung: Nutzer muss registriert sein, um gelöscht zu werden
-        assertTrue(userId > 0, "Vorbedingung fehlgeschlagen: Nutzer konnte nicht registriert werden!");
+        // Prerequisite: user has to be registered before deleting him
+        assertTrue(user.getUserId() > 0, "prerequisite failed: customer should be registered!");
 
         // Eigentlicher Test
-        assertTrue(Controller.deleteUser(userId), "Nutzer konnte nicht gelöscht werden!");
+        assertTrue(Controller.deleteUser(user.getUserId()), "user should be deleted!");
+    }
+
+    @Test
+    void employeeShouldBeRegistered() {
+
+
+        User user = Controller.registerEmployee("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
+        assertTrue(user.getUserId() > 0, "employee should be registered!");
+        assertTrue( user instanceof Customer, "new user should be instance of employee!");
+    }
+
+    @Test
+    void employeeShouldBeDeleted() {
+
+        User user = Controller.registerEmployee("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
+
+        // Prerequisite: user has to be registered before deleting him
+        assertTrue(user.getUserId() > 0, "prerequisite failed: employee should be registered!");
+
+        // Eigentlicher Test
+        assertTrue(Controller.deleteUser(user.getUserId()), "user should be deleted!");
     }
 }

@@ -4,13 +4,12 @@ import de.altwagen.domain.Address;
 
 public abstract class User {
 
-    //Variablen erstmal alles public
-    int userId = -1;
-    String firstname;
-    String lastname;
-    String eMail;
-    String password;
-    Address userAddress;
+    private int userId = -1;
+    private String firstname;
+    private String lastname;
+    private String eMail;
+    private String password;
+    private Address userAddress;
 
     public User(String firstname, String lastname, String eMail, String password, Address userAddress) {
         this.firstname = firstname;
@@ -21,6 +20,14 @@ public abstract class User {
     }
 
     //region Getter and Setter
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -37,11 +44,11 @@ public abstract class User {
         this.lastname = lastname;
     }
 
-    public String geteMail() {
+    public String getEMail() {
         return eMail;
     }
 
-    public void seteMail(String eMail) {
+    public void setEMail(String eMail) {
         this.eMail = eMail;
     }
 

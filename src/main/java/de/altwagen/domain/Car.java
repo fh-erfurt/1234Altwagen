@@ -14,8 +14,7 @@ public class Car {
     private CAR_STATUS status;
 
     //Constructor for Car
-
-    public Car(float price, String constructionYear, int drivenKM, String brand, String model, String note, Location location) {
+    public Car(float price, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CAR_STATUS status) {
         this.price = price;
         this.constructionYear = constructionYear;
         this.drivenKM = drivenKM;
@@ -23,10 +22,10 @@ public class Car {
         this.model = model;
         this.note = note;
         this.location = location;
-        //TODO set status
+        this.status = status;
     }
 
-    //Methoden erstmal alles public
+    //region Getter and Setter
     //Getter
     public int getCarId(){ return this.carId; };
     public float getPrice(){
@@ -81,5 +80,6 @@ public class Car {
     public void setStatus(CAR_STATUS status){
         this.status = status;
     };
+    //endregion
 
 }

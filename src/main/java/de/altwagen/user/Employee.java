@@ -12,10 +12,14 @@ public class Employee extends User {
         super(firstname, lastname, eMail, passwort, userAddress);
     }
 
-    //Methoden erstmal alles public
+
     public boolean sellCar(Car car, float price){
-        car.setStatus(CAR_STATUS.forSale);
         car.setPrice(price);
+        return sellCar(car);
+    }
+
+    public boolean sellCar(Car car){
+        car.setStatus(CAR_STATUS.forSale);
 
         //TODO Java2: save in DB
         return false;
@@ -23,16 +27,22 @@ public class Employee extends User {
 
 
     public void acceptRequest(Request request){
-        // TODO Java2 DB
         request.setEmployee(this);
-        request.setREQUESTStatus(REQUEST_STATUS.accepted);
+        request.setStatus(REQUEST_STATUS.accepted);
+        request.getCustomer().decreaseRequestCount();
+        // TODO Java2: save changes in DB
+        request.getCar().setStatus(CAR_STATUS.notReadyForSale);
     }
 
     public void denyRequest(Request request){
+        request.setEmployee(this);
+        request.setStatus(REQUEST_STATUS.denied);
+        request.getCustomer().decreaseRequestCount();
+        // TODO Java2: save changes in DB
 
     }
 
-    public Request[] listUnassignedRequests(){
+    public Request[] listPendingRequests(){
         // TODO Java2: Hole alle Request aus der DB mit EmployeeId = -1
         return null;
     }

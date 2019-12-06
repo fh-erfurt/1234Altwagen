@@ -10,7 +10,7 @@ public class Address {
     private String houseNumber;
 
 	public Address(String country, String city, String postcode, String street, String houseNumber) {
-        //Address(-1, country, city, postcode, street, houseNumber);
+        this(-1, country, city, postcode, street, houseNumber);
     }
 
     public Address(int addressId, String country, String city, String postcode, String street, String houseNumber) {
@@ -22,6 +22,7 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
+    //region Getter and Setter
     //Getter
     public int getAddressId(){
         return this.addressId;
@@ -29,17 +30,18 @@ public class Address {
     public String getCountry(){
         return this.country;
     };
-
-    public String getPostCode(){
+    public String getCity() {
+        return this.city;
+    }
+    public String getPostcode() {
         return this.postcode;
-    };
+    }
     public String getStreet(){
         return this.street;
     };
     public String getHouseNumber(){
         return this.houseNumber;
     };
-
 
     //Setter
     public void setAddressId(int adrId){
@@ -60,5 +62,5 @@ public class Address {
     public void setHouseNumber(String houseNumber){
         this.houseNumber = houseNumber;
     };
-
+    //endregion
 }
