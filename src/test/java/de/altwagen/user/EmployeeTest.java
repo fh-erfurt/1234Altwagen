@@ -17,4 +17,8 @@ class EmployeeTest {
     @Test
     void cancelRequest() {
     }
+
+    @Test
+    void listPendingRequests() {
+    }
 }

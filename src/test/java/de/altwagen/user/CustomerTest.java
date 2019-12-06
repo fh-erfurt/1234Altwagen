@@ -14,4 +14,12 @@ class CustomerTest {
     @Test
     void requestBuyCar() {
     }
+
+    @Test
+    void cancelRequest() {
+    }
+
+    @Test
+    void decreaseRequestCount() {
+    }
 }
