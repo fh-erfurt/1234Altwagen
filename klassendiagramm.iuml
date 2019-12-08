@@ -4,62 +4,94 @@ title 1234Altwagen - Class Diagram
 
 class Car {
     -carId: int
-    -price float
+    -price: float
     -constructionYear: int
     -drivenKM: int
     -brand: string
     -model: string
     -note: string
     -location: Location
-    -REQUESTStatus: string
-    +setPrice (int newCarId, float newPrice): void
+    -status: CAR_STATUS
+    +Car(float, String, int, String, String, String, Location, CAR_STATUS)
 }
 
 class Location {
     -locId: int
-    -adress: Adress
+    -address: Address
+    -name: string
+    -maxCars: int
+    -carCount: int
+    +Location(int, Address, String, int, int)
 }
 
 class Request {
     -requestId: int
-    -type: bool
     -car: Car
     -employee: Employee
     -customer: Customer
-    -REQUESTStatus: string
+    -type: REQUEST_TYPE
+    -status: REQUEST_STATUS
+    +Request(REQUEST_TYPE, Car, Customer)
 }
-class Adress {
-    -adrId: int
+
+class Address {
+    -addressId: int
     -country: string
     -city: string
     -zip: string
     -street: string
     -houseNumber: string
+    +Address(int, String, String, String, String, String, String)
 }
+
 class Controller {
-    +listCars(): Car[]
-    +registerUser (User): bool
-    +deleteUser (int userId): bool
+    +getAllCars(): Car[]
+    +getCarsByStatus(CAR_STATUS): Car[]
+    +deleteUser (int userId): boolean
+    +registerCustomer (String, String, String, String, String, String, String, String, String): User
+    +registerEmployee (String, String, String, String, String, String, String, String, String): User
+    -registerUser(User, boolean)
 }
 
 class User {
-    -userId: int
-    -firstname: string
-    -surname: string
-    -eMail: string
-    -password: string
-    -userAdress: Adress
+    ~userId: int
+    ~firstname: string
+    ~lastname: string
+    ~eMail: string
+    ~password: string
+    ~userAddress: Address
 }
 class Customer {
     -requestCount: int
     +requestSellCar(Car): Request
-    +requestBuyCar(int carId): Request
-    +cancelRequest(Request): bool
+    +requestBuyCar(Car): Request
+    +cancelRequest(Request): boolean
+    +decreaseRequestCount(): void
+    -createRequest(Car, REQUEST_TYPE): Request
 }
 class Employee {
-    +createCar(Car): bool
+    +sellCar(Car): bool
+    +sellCar(Car, float): bool
     +acceptRequest(Request): bool
     +denyRequest(Request): bool
+    +listPendingRequests(): Request[]
+}
+
+enum CAR_STATUS {
+    +forSale
+    +notReadyForSale
+    +onRequest
+}
+
+enum REQUEST_STATUS {
+    +pending
+    +accepted
+    +denied
+}
+
+enum REQUEST_TYPE {
+    +buy
+    +sell
 }
 
 Customer --> User
@@ -71,4 +103,7 @@ Location -- Adress
 Request -- Customer
 Request -- Employee
 Adress -- User
+Car -- CAR_STATUS
+Request -- REQUEST_TYPE
+Request -- REQUEST_STATUS
 @enduml

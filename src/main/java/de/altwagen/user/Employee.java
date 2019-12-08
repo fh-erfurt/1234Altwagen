@@ -26,7 +26,7 @@ public class Employee extends User {
     }
 
 
-    public void acceptRequest(Request request){
+    public boolean acceptRequest(Request request){
         request.setEmployee(this);
         request.setStatus(REQUEST_STATUS.accepted);
         request.getCustomer().decreaseRequestCount();
@@ -34,7 +34,7 @@ public class Employee extends User {
         request.getCar().setStatus(CAR_STATUS.notReadyForSale);
     }
 
-    public void denyRequest(Request request){
+    public boolean denyRequest(Request request){
         request.setEmployee(this);
         request.setStatus(REQUEST_STATUS.denied);
         request.getCustomer().decreaseRequestCount();
