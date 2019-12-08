@@ -99,10 +99,10 @@ Employee --> User
 
 Car -- Location
 Car -- Request
-Location -- Adress
+Location -- Address
 Request -- Customer
 Request -- Employee
-Adress -- User
+Address -- User
 Car -- CAR_STATUS
 Request -- REQUEST_TYPE
 Request -- REQUEST_STATUS
