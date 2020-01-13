@@ -109,7 +109,8 @@ Employee --> User
 
 Car -- CarManager
 Request -- RequestManager
-User -- UserManager
+Customer -- UserManager
+Employee -- UserManager
 Car -- Location
 Car -- Request
 Location -- Address
