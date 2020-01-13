@@ -32,6 +32,7 @@ public class Employee extends User {
         request.getCustomer().decreaseRequestCount();
         // TODO Java2: save changes in DB
         request.getCar().setStatus(CAR_STATUS.notReadyForSale);
+        return false;
     }
 
     public boolean denyRequest(Request request){
@@ -39,7 +40,7 @@ public class Employee extends User {
         request.setStatus(REQUEST_STATUS.denied);
         request.getCustomer().decreaseRequestCount();
         // TODO Java2: save changes in DB
-
+        return false;
     }
 
     public Request[] listPendingRequests(){
