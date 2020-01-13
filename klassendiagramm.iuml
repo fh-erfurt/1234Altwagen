@@ -2,8 +2,12 @@
 title 1234Altwagen - Class Diagram
 
 
+class CarManager {
+    -cars: Car[]
+}
+
 class Car {
-    -carId: int
+    -chassisNumber: string
     -price: float
     -constructionYear: int
     -drivenKM: int
@@ -16,16 +20,18 @@ class Car {
 }
 
 class Location {
-    -locId: int
     -address: Address
     -name: string
     -maxCars: int
     -carCount: int
-    +Location(int, Address, String, int, int)
+    +Location(Address, String, int, int)
+}
+
+class RequestManager {
+    -requests: Request[]
 }
 
 class Request {
-    -requestId: int
     -car: Car
     -employee: Employee
     -customer: Customer
@@ -35,7 +41,6 @@ class Request {
 }
 
 class Address {
-    -addressId: int
     -country: string
     -city: string
     -zip: string
@@ -51,6 +56,11 @@ class Controller {
     +registerCustomer (String, String, String, String, String, String, String, String, String): User
     +registerEmployee (String, String, String, String, String, String, String, String, String): User
     -registerUser(User, boolean)
+}
+
+class UserManager {
+    -customers: Customer[]
+    -employees: Employee[]
 }
 
 class User {
@@ -97,6 +107,9 @@ enum REQUEST_TYPE {
 Customer --> User
 Employee --> User
 
+Car -- CarManager
+Request -- RequestManager
+User -- UserManager
 Car -- Location
 Car -- Request
 Location -- Address
