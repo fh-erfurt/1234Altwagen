@@ -4,12 +4,11 @@ import de.altwagen.domain.Address;
 
 public abstract class User {
 
-    private int userId = -1;
-    private String firstname;
-    private String lastname;
-    private String eMail;
-    private String password;
-    private Address userAddress;
+    protected String firstname;
+    protected String lastname;
+    protected String eMail;
+    protected String password;
+    protected Address userAddress;
 
     public User(String firstname, String lastname, String eMail, String password, Address userAddress) {
         this.firstname = firstname;
@@ -20,14 +19,6 @@ public abstract class User {
     }
 
     //region Getter and Setter
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public String getFirstname() {
         return firstname;
     }
@@ -68,6 +59,27 @@ public abstract class User {
         this.userAddress = userAddress;
     }
     //endregion
+
+    @Override
+    public boolean equals(Object o){
+
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of User or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        // typecast o to User so that we can compare data members
+        User u = (User) o;
+
+        // Compare the data members and return accordingly
+        return eMail.equals(u.getEMail());
+    }
 
 }
 

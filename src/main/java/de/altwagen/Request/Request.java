@@ -1,12 +1,11 @@
 package de.altwagen.Request;
 
-import de.altwagen.domain.Car;
+import de.altwagen.Car.Car;
 import de.altwagen.user.Customer;
 import de.altwagen.user.Employee;
 
 public class Request {
 
-    private int requestId;
     private Car car;
     private Customer customer;
     private Employee employee;
@@ -14,23 +13,16 @@ public class Request {
     private REQUEST_STATUS status;
     private REQUEST_TYPE type;
 
-    public Request(REQUEST_TYPE type, Car car, Customer user) {
+    public Request(REQUEST_TYPE type, Car car, Customer customer, float price) {
         this.type = type;
         this.car = car;
-        this.customer = user;
+        this.customer = customer;
+        this.price = price;
         this.employee = null; // TODO Employee zuweisen
         this.status = REQUEST_STATUS.pending;
     }
 
     //region Getter and Setter
-    public int getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
-    }
-
     public Car getCar() {
         return car;
     }

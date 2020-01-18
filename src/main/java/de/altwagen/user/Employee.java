@@ -3,8 +3,8 @@ package de.altwagen.user;
 import de.altwagen.Request.REQUEST_STATUS;
 import de.altwagen.domain.Address;
 import de.altwagen.Request.Request;
-import de.altwagen.domain.CAR_STATUS;
-import de.altwagen.domain.Car;
+import de.altwagen.Car.CAR_STATUS;
+import de.altwagen.Car.Car;
 
 public class Employee extends User {
 
@@ -14,14 +14,7 @@ public class Employee extends User {
 
 
     public boolean sellCar(Car car, float price){
-        car.setPrice(price);
-        return sellCar(car);
-    }
-
-    public boolean sellCar(Car car){
-        car.setStatus(CAR_STATUS.forSale);
-
-        //TODO Java2: save in DB
+        // TODO
         return false;
     }
 

@@ -2,7 +2,7 @@ package de.altwagen.user;
 
 import de.altwagen.Request.REQUEST_STATUS;
 import de.altwagen.domain.Address;
-import de.altwagen.domain.Car;
+import de.altwagen.Car.Car;
 import de.altwagen.Request.Request;
 import de.altwagen.Request.REQUEST_TYPE;
 
@@ -18,19 +18,21 @@ public class Customer extends User {
     /**
      * starts a new request to sell a car
      * @param car
+     * @param price
      * @return new generated request
      */
-    public Request requestSellCar(Car car){
-        return createRequest(car, REQUEST_TYPE.sell);
+    public Request requestSellCar(Car car, float price){
+        return createRequest(car, REQUEST_TYPE.sell, price);
     }
 
     /**
      * starts a new request to buy a car
      * @param car
+     * @param price
      * @return new generated request
      */
-    public Request  requestBuyCar(Car car){
-        return createRequest(car, REQUEST_TYPE.buy);
+    public Request  requestBuyCar(Car car, float price){
+        return createRequest(car, REQUEST_TYPE.buy, price);
     }
 
     /**
@@ -63,14 +65,15 @@ public class Customer extends User {
      * creates a new request
      * @param car
      * @param type type of the request (see {@link REQUEST_TYPE})
+     * @param price
      * @return newly created request
      */
-    private Request createRequest(Car car, REQUEST_TYPE type) {
+    private Request createRequest(Car car, REQUEST_TYPE type, float price) {
         // TODO Java2: get request count (is this necessary here?)
 
         if(requestCount < maxRequests){
             requestCount++;
-            Request request = new Request(type, car, this);
+            Request request = new Request(type, car, this, price);
             // TODO Java2: save request in DB (maybe not here in code?)
             return  request;
         }
