@@ -47,7 +47,7 @@ public class UserManagerTest {
         assertNotNull(employee, "prerequisite failed: employee should be registered!");
 
         // test
-        assertTrue(userManager.deleteCustomer(employee.eMail), "employee should be deleted!");
+        assertTrue(userManager.deleteEmployee(employee.eMail), "employee should be deleted!");
     }
 
     @Test
