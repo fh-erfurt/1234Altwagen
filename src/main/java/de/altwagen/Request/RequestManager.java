@@ -4,7 +4,6 @@ import de.altwagen.Car.Car;
 import de.altwagen.user.Customer;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class RequestManager {
     private static RequestManager instance;
@@ -34,15 +33,15 @@ public class RequestManager {
      * @param car
      * @param customer
      * @param price
-     * @return added request or null if request with same type, car, customer and REQUEST_STATUS not denied exists
+     * @return added request or null if request with same type, car, customer and RequestStatus not denied exists
      */
-    public Request addRequest(REQUEST_TYPE type, Car car, Customer customer, float price) {
+    public Request addRequest(RequestType type, Car car, Customer customer, float price) {
 
         for (Request request : requests) {
             if (request.getType() == type &&
                     car.equals(request.getCar()) &&
                     customer.equals(request.getCustomer()) &&
-                    request.getStatus() != REQUEST_STATUS.denied) {
+                    request.getStatus() != RequestStatus.DENIED) {
                 return null;
             }
         }

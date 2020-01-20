@@ -1,13 +1,8 @@
 package de.altwagen.Car;
 
-import de.altwagen.domain.Address;
 import de.altwagen.domain.Location;
-import de.altwagen.user.Customer;
-import de.altwagen.user.Employee;
-import de.altwagen.user.UserManager;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class CarManager {
     private static CarManager instance;
@@ -43,7 +38,7 @@ public class CarManager {
      * @param status
      * @return added Car or null if a car with the given chassisNumber exists already
      */
-    public Car addNewCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CAR_STATUS status) {
+    public Car addNewCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CarStatus status) {
         //check if car is already in list (check for chassisNumber)
         if(getIndexOfCarWithChassisNumber(chassisNumber) != -1)
             return null;

@@ -10,16 +10,16 @@ public class Request {
     private Customer customer;
     private Employee employee;
     private float price;
-    private REQUEST_STATUS status;
-    private REQUEST_TYPE type;
+    private RequestStatus status;
+    private RequestType type;
 
-    public Request(REQUEST_TYPE type, Car car, Customer customer, float price) {
+    public Request(RequestType type, Car car, Customer customer, float price) {
         this.type = type;
         this.car = car;
         this.customer = customer;
         this.price = price;
         this.employee = null; // TODO Employee zuweisen
-        this.status = REQUEST_STATUS.pending;
+        this.status = RequestStatus.PENDING;
     }
 
     //region Getter and Setter
@@ -55,19 +55,19 @@ public class Request {
         this.price = price;
     }
 
-    public REQUEST_STATUS getStatus() {
+    public RequestStatus getStatus() {
         return status;
     }
 
-    public void setStatus(REQUEST_STATUS status) {
+    public void setStatus(RequestStatus status) {
         this.status = status;
     }
 
-    public REQUEST_TYPE getType() {
+    public RequestType getType() {
         return type;
     }
 
-    public void setType(REQUEST_TYPE type) {
+    public void setType(RequestType type) {
         this.type = type;
     }
 

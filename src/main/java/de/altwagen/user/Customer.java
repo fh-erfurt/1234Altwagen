@@ -1,10 +1,10 @@
 package de.altwagen.user;
 
-import de.altwagen.Request.REQUEST_STATUS;
+import de.altwagen.Request.RequestStatus;
 import de.altwagen.domain.Address;
 import de.altwagen.Car.Car;
 import de.altwagen.Request.Request;
-import de.altwagen.Request.REQUEST_TYPE;
+import de.altwagen.Request.RequestType;
 
 public class Customer extends User {
 
@@ -22,7 +22,7 @@ public class Customer extends User {
      * @return new generated request
      */
     public Request requestSellCar(Car car, float price){
-        return createRequest(car, REQUEST_TYPE.sell, price);
+        return createRequest(car, RequestType.SELL, price);
     }
 
     /**
@@ -32,7 +32,7 @@ public class Customer extends User {
      * @return new generated request
      */
     public Request  requestBuyCar(Car car, float price){
-        return createRequest(car, REQUEST_TYPE.buy, price);
+        return createRequest(car, RequestType.BUY, price);
     }
 
     /**
@@ -42,7 +42,7 @@ public class Customer extends User {
      */
     public boolean cancelRequest(Request request){
         boolean result = false;
-        if(request.getStatus() == REQUEST_STATUS.pending){
+        if(request.getStatus() == RequestStatus.PENDING){
             //TODO Java2 delete Request from DB
             // result = true;
         }
@@ -64,11 +64,11 @@ public class Customer extends User {
     /**
      * creates a new request
      * @param car
-     * @param type type of the request (see {@link REQUEST_TYPE})
+     * @param type type of the request (see {@link RequestType})
      * @param price
      * @return newly created request
      */
-    private Request createRequest(Car car, REQUEST_TYPE type, float price) {
+    private Request createRequest(Car car, RequestType type, float price) {
         // TODO Java2: get request count (is this necessary here?)
 
         if(requestCount < maxRequests){

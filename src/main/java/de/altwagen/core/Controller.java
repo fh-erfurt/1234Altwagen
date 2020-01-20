@@ -1,6 +1,6 @@
 package de.altwagen.core;
 
-import de.altwagen.Car.CAR_STATUS;
+import de.altwagen.Car.CarStatus;
 import de.altwagen.Car.Car;
 
 public class Controller {
@@ -18,7 +18,7 @@ public class Controller {
         return cars;
     }
 
-    public static Car[] getCarsByStatus(CAR_STATUS status){
+    public static Car[] getCarsByStatus(CarStatus status){
         // TODO Java2: get all Cars with this status from DB
         Car[] cars = null;
         return cars;

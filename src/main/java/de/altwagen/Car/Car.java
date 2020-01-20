@@ -12,10 +12,10 @@ public class Car {
     private String model;
     private String note;
     private Location location;
-    private CAR_STATUS status;
+    private CarStatus status;
 
     //Constructor for Car
-    public Car(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CAR_STATUS status) {
+    public Car(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CarStatus status) {
         this.chassisNumber = chassisNumber;
         this.constructionYear = constructionYear;
         this.drivenKM = drivenKM;
@@ -47,7 +47,7 @@ public class Car {
     public Location getLocation(){
         return this.location;
     }
-    public CAR_STATUS getStatus(){
+    public CarStatus getStatus(){
         return this.status;
     }
 
@@ -72,7 +72,7 @@ public class Car {
     public void setLocation(Location location){
         this.location = location;
     }
-    public void setStatus(CAR_STATUS status){
+    public void setStatus(CarStatus status){
         this.status = status;
     }
     //endregion

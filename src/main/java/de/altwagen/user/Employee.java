@@ -1,9 +1,9 @@
 package de.altwagen.user;
 
-import de.altwagen.Request.REQUEST_STATUS;
+import de.altwagen.Request.RequestStatus;
 import de.altwagen.domain.Address;
 import de.altwagen.Request.Request;
-import de.altwagen.Car.CAR_STATUS;
+import de.altwagen.Car.CarStatus;
 import de.altwagen.Car.Car;
 
 public class Employee extends User {
@@ -21,16 +21,16 @@ public class Employee extends User {
 
     public boolean acceptRequest(Request request){
         request.setEmployee(this);
-        request.setStatus(REQUEST_STATUS.accepted);
+        request.setStatus(RequestStatus.ACCEPTED);
         request.getCustomer().decreaseRequestCount();
         // TODO Java2: save changes in DB
-        request.getCar().setStatus(CAR_STATUS.notReadyForSale);
+        request.getCar().setStatus(CarStatus.NOT_READY_FOR_SALE);
         return false;
     }
 
     public boolean denyRequest(Request request){
         request.setEmployee(this);
-        request.setStatus(REQUEST_STATUS.denied);
+        request.setStatus(RequestStatus.DENIED);
         request.getCustomer().decreaseRequestCount();
         // TODO Java2: save changes in DB
         return false;
