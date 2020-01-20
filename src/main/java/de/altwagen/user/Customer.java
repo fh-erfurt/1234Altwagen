@@ -1,5 +1,6 @@
 package de.altwagen.user;
 
+import de.altwagen.Request.RequestManager;
 import de.altwagen.Request.RequestStatus;
 import de.altwagen.domain.Address;
 import de.altwagen.Car.Car;
@@ -15,6 +16,13 @@ public class Customer extends User {
         super(firstname, lastname, eMail, passwort, userAddress);
     }
 
+    public int getActiveRequestCount(){
+        return requestCount;
+    }
+
+    public int getMaximumRequestCount(){
+        return maxRequests;
+    }
     /**
      * starts a new request to sell a car
      * @param car
@@ -36,15 +44,16 @@ public class Customer extends User {
     }
 
     /**
-     * deletes pending request
+     * sets the {@link RequestStatus} to CANCELLED if the request is PENDING
      * @param request
-     * @return true, if deletion successful
+     * @return true, if cancelling successful
      */
     public boolean cancelRequest(Request request){
         boolean result = false;
         if(request.getStatus() == RequestStatus.PENDING){
-            //TODO Java2 delete Request from DB
-            // result = true;
+            request.setStatus(RequestStatus.CANCELLED);
+            decreaseRequestCount();
+            result = true;
         }
         return result;
     }
@@ -53,28 +62,23 @@ public class Customer extends User {
      * decreases the request count by 1
      */
     public void decreaseRequestCount(){
-        requestCount--;
-        if(requestCount<0){
-            //TODO Error or set to 0?
-            // this should never happen!
+        if(--requestCount < 0){
             requestCount = 0;
         }
     }
 
     /**
-     * creates a new request
+     * creates a new request if the user has not already the maximum count of active requests
      * @param car
      * @param type type of the request (see {@link RequestType})
      * @param price
-     * @return newly created request
+     * @return newly created request, null otherwise
      */
     private Request createRequest(Car car, RequestType type, float price) {
-        // TODO Java2: get request count (is this necessary here?)
-
         if(requestCount < maxRequests){
-            requestCount++;
-            Request request = new Request(type, car, this, price);
-            // TODO Java2: save request in DB (maybe not here in code?)
+            ++requestCount;
+            RequestManager requestManager = RequestManager.getInstance();
+            Request request = requestManager.addRequest(type, car, this, price);
             return  request;
         }
         else{

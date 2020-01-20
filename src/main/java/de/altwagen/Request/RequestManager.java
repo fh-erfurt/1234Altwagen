@@ -51,4 +51,24 @@ public class RequestManager {
         return newRequest;
     }
 
+    public ArrayList<Request> getRequestsByStatus(RequestStatus status){
+        ArrayList<Request> requestList = new ArrayList<>();
+        for(Request request : requests){
+            if(request.getStatus() == status){
+                requestList.add(request);
+            }
+        }
+        return requestList;
+    }
+
+    public ArrayList<Request> getRequestsByType(RequestType type){
+        ArrayList<Request> requestList = new ArrayList<>();
+        for(Request request : requests){
+            if(request.getType() == type){
+                requestList.add(request);
+            }
+        }
+        return requestList;
+    }
+
 }

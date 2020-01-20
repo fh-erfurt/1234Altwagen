@@ -4,5 +4,6 @@ public enum RequestStatus
 {
     PENDING,    // new request
     ACCEPTED,   // employee accepted request
-    DENIED;     // employee denied request
+    DENIED,     // employee denied request
+    CANCELLED   // customer cancelled request
 }

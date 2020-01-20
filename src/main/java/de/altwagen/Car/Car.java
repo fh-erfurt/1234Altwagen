@@ -8,6 +8,7 @@ public class Car {
     private String chassisNumber;
     private String constructionYear;
     private int drivenKM;
+    private float price;
     private String brand;
     private String model;
     private String note;
@@ -35,6 +36,9 @@ public class Car {
     public int getDrivenKM(){
         return this.drivenKM;
     }
+    public float getPrice(){
+        return this.price;
+    }
     public String getBrand(){
         return this.brand;
     }
@@ -61,6 +65,9 @@ public class Car {
     }
     public void setDrivenKM(int drivenKM){
         this.drivenKM = drivenKM;
+    }
+    public void setPrice(float price){
+        this.price = price;
     }
     public void setBrand(String brand){
         this.brand = brand;
