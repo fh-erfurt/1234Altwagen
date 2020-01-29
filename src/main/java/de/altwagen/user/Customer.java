@@ -1,11 +1,15 @@
 package de.altwagen.user;
 
+import de.altwagen.Car.CarManager;
+import de.altwagen.Car.CarStatus;
 import de.altwagen.Request.RequestManager;
 import de.altwagen.Request.RequestStatus;
 import de.altwagen.domain.Address;
 import de.altwagen.Car.Car;
 import de.altwagen.Request.Request;
 import de.altwagen.Request.RequestType;
+
+import java.util.ArrayList;
 
 public class Customer extends User {
 
@@ -23,6 +27,19 @@ public class Customer extends User {
     public int getMaximumRequestCount(){
         return maxRequests;
     }
+
+    public Request requestSellCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, float price){
+        CarManager carManager = CarManager.getInstance();
+        Car car = carManager.addNewCar(chassisNumber, constructionYear, drivenKM, brand, model, note, null, CarStatus.INACTIVE);
+
+        if(car != null) {
+            return requestSellCar(car, price);
+        }
+        else{
+            return null;
+        }
+    }
+
     /**
      * starts a new request to sell a car
      * @param car
@@ -66,6 +83,7 @@ public class Customer extends User {
             requestCount = 0;
         }
     }
+
 
     /**
      * creates a new request if the user has not already the maximum count of active requests

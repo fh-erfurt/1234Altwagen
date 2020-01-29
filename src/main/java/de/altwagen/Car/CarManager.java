@@ -85,6 +85,36 @@ public class CarManager {
         return cars.get(index);
     }
 
+    /**
+     * search in the car array for all cars with the given {@link CarStatus}
+     * @param status
+     * @return ArrayList of all Cars found, if no car is found an empty ArrayList is returned
+     */
+    public ArrayList<Car> listCarsByStatus(CarStatus status){
+        ArrayList<Car> carList = new ArrayList<>();
+        for (Car car : cars) {
+            if (status.equals(car.getChassisNumber())) {
+                carList.add(car);
+            }
+        }
+        return carList;
+    }
+
+    /**
+     * search in the car array for all cars which are at the given {@link Location}
+     * @param location
+     * @return ArrayList of all Cars at that {@link Location}, if there is no car an empty ArrayList is returned
+     */
+    public ArrayList<Car> listCarsByLocation(Location location){
+        ArrayList<Car> carList = new ArrayList<>();
+        for (Car car : cars) {
+            if (location.equals(car.getLocation())) {
+                carList.add(car);
+            }
+        }
+        return carList;
+    }
+
     // private functions
 
     /**

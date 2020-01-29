@@ -1,11 +1,14 @@
 package de.altwagen.domain;
 
+import de.altwagen.Car.Car;
+import de.altwagen.Exceptions.CarCountBelowZeroException;
+
 public class Location {
 
     //Class variables all private
     private Address address;
     private String name;
-    private final int maxCars;  // should the maximum of cars that can be stored at a location be variable??
+    private int maxCars;
     private int carCount;
 
     public Location(Address address, String name, int maxCars, int carCount) {
@@ -36,18 +39,73 @@ public class Location {
         return maxCars;
     }
 
+    public void setMaxCars(int maxCars){
+        this.maxCars = maxCars;
+    }
+
     public int getCarCount() {
         return carCount;
     }
 
-    public void setCarCount(int carCount) {
-        this.carCount = carCount;
-    }
-
     //endregion
 
-//eine funktion zum ändern des standortes/zum aktualisieren?
+    @Override
+    public boolean equals(Object o){
 
-    // public Car[] getAllCars()
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of Location or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Location)) {
+            return false;
+        }
+
+        // typecast o to Location so that we can compare data members
+        Location l = (Location) o;
+
+        // Compare the data members and return accordingly
+        return address.equals(l.getAddress());
+    }
+
+    public boolean addCar(Car car) throws CarCountBelowZeroException{
+        if(carCount >= maxCars){
+            return false;
+        }
+        boolean result = false;
+        Location oldLocation = car.getLocation();
+        if (oldLocation != null){
+            result = oldLocation.decreaseCarCount();
+        }
+        if(result) {
+            result = increaseCarCount();
+            if(result){
+                car.setLocation(this);
+            }
+        }
+        return result;
+    }
+
+    public boolean decreaseCarCount() throws CarCountBelowZeroException {
+        if(carCount > 0){
+            --carCount;
+            return true;
+        }
+        else {
+            throw new CarCountBelowZeroException(this);
+        }
+    }
+
+    private boolean increaseCarCount(){
+        if(carCount < maxCars){
+            ++carCount;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }

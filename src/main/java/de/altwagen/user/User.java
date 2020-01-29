@@ -1,6 +1,13 @@
 package de.altwagen.user;
 
+import de.altwagen.Car.Car;
+import de.altwagen.Car.CarManager;
+import de.altwagen.Car.CarStatus;
+import de.altwagen.Request.Request;
+import de.altwagen.Request.RequestManager;
 import de.altwagen.domain.Address;
+
+import java.util.ArrayList;
 
 public abstract class User {
 
@@ -79,6 +86,16 @@ public abstract class User {
 
         // Compare the data members and return accordingly
         return eMail.equals(u.getEMail());
+    }
+
+    public ArrayList<Car> listCarsForSale(){
+        CarManager carManager = CarManager.getInstance();
+        return carManager.listCarsByStatus(CarStatus.FOR_SALE);
+    }
+
+    public ArrayList<Request> listMyRequests(){
+        RequestManager requestManager = RequestManager.getInstance();
+        return requestManager.getRequestsByUser(this);
     }
 
 }

@@ -63,9 +63,7 @@ public class UserManagerTest {
 
     @Test
     void tmp(){
-        Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
-        customer.setFirstname("Mario");
-        Customer c = (Customer) userManager.getUserByEMail(customer.getEMail());
-        assertEquals(c.firstname, customer.firstname);
+        User customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
+        assertTrue(customer instanceof Customer);
     }
 }

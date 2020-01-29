@@ -46,14 +46,27 @@ public class LocationManager {
      * @return true if location is successful deleted, false if no location with this address and name exists
      */
     public boolean deleteLocation(Address address, String name){
-        boolean success = false;
         for (Location location : locations) {
             if (location.getAddress().equals(address) && location.getName().equals(name)) {
                 locations.remove(location);
-                success = true;
-                break;
+                return true;
             }
         }
-        return success;
+        return false;
+    }
+
+    /**
+     *
+     * @param minSpace minimum available space which the location should have
+     * @return ArrayList of {@link Location} with at least the given {@param minSpace}
+     */
+    public ArrayList<Location> getLocationsWithAvailableSpace(int minSpace){
+        ArrayList<Location> locationList = new ArrayList<>();
+        for (Location location : locations) {
+            if (location.getMaxCars() - location.getCarCount() >= minSpace) {
+                locationList.add(location);
+            }
+        }
+        return locationList;
     }
 }
