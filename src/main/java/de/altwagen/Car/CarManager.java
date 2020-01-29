@@ -93,7 +93,7 @@ public class CarManager {
     public ArrayList<Car> listCarsByStatus(CarStatus status){
         ArrayList<Car> carList = new ArrayList<>();
         for (Car car : cars) {
-            if (status.equals(car.getChassisNumber())) {
+            if (status.equals(car.getStatus())) {
                 carList.add(car);
             }
         }

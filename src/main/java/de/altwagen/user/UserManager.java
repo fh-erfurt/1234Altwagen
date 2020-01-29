@@ -54,7 +54,6 @@ public class UserManager {
      * @param firstname
      * @param lastname
      * @param eMail
-     * @param password
      * @param country
      * @param city
      * @param postcode
