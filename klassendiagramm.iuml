@@ -3,41 +3,40 @@ title 1234Altwagen - Class Diagram
 
 
 class CarManager {
-    -cars: Car[]
+    {static} -instance: CarManager
+    -cars: ArrayList<Car>
+    {static} +getInstance(): CarManager
+    {static} +clearInstance(): void
+    +addNewCar(String, String, int, String, String, String, Location, CarStatus): Car
+    +addOrChangeCar(Car): boolean
+    +deleteCar(String): void
+    +getCarByChassisNumber(String): Car
+    +listCarsByStatus(CarStatus): ArrayList<Car>
+    +listCarsByLocation(Location): ArrayList<Car>
+    -getIndexOfCarWithChassisNumber(String): int
 }
 
 class Car {
     -chassisNumber: string
-    -price: float
     -constructionYear: int
     -drivenKM: int
+    -price: float
     -brand: string
     -model: string
     -note: string
     -location: Location
-    -status: CAR_STATUS
-    +Car(float, String, int, String, String, String, Location, CAR_STATUS)
+    -status: CarStatus
+    +Car(String, String, int, String, String, String, Location, CarStatus)
+    {method} getter und setter
+    +equals(Object): boolean
 }
 
-class Location {
-    -address: Address
-    -name: string
-    -maxCars: int
-    -carCount: int
-    +Location(Address, String, int, int)
-}
-
-class RequestManager {
-    -requests: Request[]
-}
-
-class Request {
-    -car: Car
-    -employee: Employee
-    -customer: Customer
-    -type: REQUEST_TYPE
-    -status: REQUEST_STATUS
-    +Request(REQUEST_TYPE, Car, Customer)
+enum CarStatus {
+    +FOR_SALE
+    +NOT_READY_FOR_SALE
+    +ON_ACTIVE_REQUEST
+    +SOLD
+    +INACTIVE
 }
 
 class Address {
@@ -47,61 +46,114 @@ class Address {
     -street: string
     -houseNumber: string
     +Address(int, String, String, String, String, String, String)
+    {method} getter und setter
+    +equals(Object): boolean
 }
 
-class Controller {
-    +getAllCars(): Car[]
-    +getCarsByStatus(CAR_STATUS): Car[]
-    +deleteUser (int userId): boolean
-    +registerCustomer (String, String, String, String, String, String, String, String, String): User
-    +registerEmployee (String, String, String, String, String, String, String, String, String): User
-    -registerUser(User, boolean)
+class Location {
+    -address: Address
+    -name: string
+    -maxCars: int
+    -carCount: int
+    +Location(Address, String, int, int)
+    {method} getter und setter
+    +addCar(Car): boolean
+    +decreaseCarCount(): boolean
+    +equals(Object): boolean
+    -increaseCarCount(): boolean
 }
 
-class UserManager {
-    -customers: Customer[]
-    -employees: Employee[]
+class LocationManager {
+    {static} -instance: LocationManager
+    -locations: ArrayList<Location>
+    {static} +getInstance(): LocationManager
+    {static} +clearInstance(): void
+    +addLocation(String, String, String, String, String, String, int, int): Location
+    +deleteLocation(Address, String): boolean
+    +getLocationsWithAvailableSpace(int): ArrayList<Location>
+}
+
+class Request {
+    -car: Car
+    -employee: Employee
+    -customer: Customer
+    -float: price
+    -type: RequestType
+    -status: RequestStatus
+    +Request(RequestType, Car, Customer, price)
+    {method} getter und setter
+}
+
+class RequestManager {
+    {static} -instance: RequestManager
+    -requests: ArrayList<Request>
+    {static} +getInstance(): RequestManager
+    {static} +clearInstance(): void
+    +addRequest(RequestType, Car, Customer, float): Request
+    +getRequestsByStatus(RequestStatus): ArrayList<Request>
+    +getRequestsByType(RequestType): ArrayList<Request>
+    +getRequestsByUser(User): ArrayList<Request>
+}
+
+enum RequestStatus {
+    +PENDING
+    +ACCEPTED
+    +DENIED
+    +CANCELLED
+}
+
+enum RequestType {
+    +BUY
+    +SELL
+}
+
+class Customer {
+    -requestCount: int
+    -maxRequests: int
+    +Customer(String, String, String, String, Address)
+    +cancelRequest(Request): boolean
+    +decreaseRequestCount(): void
+    +getActiveRequestCount(): int
+    +getMaximumRequestCount(): int
+    +requestBuyCar(Car): Request
+    +requestSellCar(String, String, int, String, String, String, float): Request
+    +requestSellCar(Car): Request
+    -createRequest(Car, RequestType, float): Request
+}
+
+class Employee {
+    +Employee(String, String, String, String, Address)
+    +sellCar(Car, float): bool
+    +acceptRequest(Request): bool
+    +changeCarLocation(Car, Location): boolean
+    +denyRequest(Request): bool
+    +getLocationsWithAvailableSpace(int): ArrayList<Location>
+    +listPendingRequests(): ArrayList<Request>
 }
 
 class User {
-    ~userId: int
-    ~firstname: string
-    ~lastname: string
-    ~eMail: string
-    ~password: string
-    ~userAddress: Address
-}
-class Customer {
-    -requestCount: int
-    +requestSellCar(Car): Request
-    +requestBuyCar(Car): Request
-    +cancelRequest(Request): boolean
-    +decreaseRequestCount(): void
-    -createRequest(Car, REQUEST_TYPE): Request
-}
-class Employee {
-    +sellCar(Car): bool
-    +sellCar(Car, float): bool
-    +acceptRequest(Request): bool
-    +denyRequest(Request): bool
-    +listPendingRequests(): Request[]
+    #firstname: string
+    #lastname: string
+    #eMail: string
+    #password: string
+    #userAddress: Address
+    +User(String, String, String, String, Address)
+    {method} getter und setter
+    +equals(Object): boolean
+    +listCarsForSale(): ArrayList<Car>
+    +listMyRequests(): ArrayList<Requests>
 }
 
-enum CAR_STATUS {
-    +forSale
-    +notReadyForSale
-    +onRequest
-}
-
-enum REQUEST_STATUS {
-    +pending
-    +accepted
-    +denied
-}
-
-enum REQUEST_TYPE {
-    +buy
-    +sell
+class UserManager {
+    {static} -instance: UserManager
+    -users: ArrayList<User>
+    {static} +getInstance(): UserManager
+    {static} +clearInstance(): void
+    +registerCustomer(String, String, String, String, String, String, String, String, String): Customer 
+    +registerEmployee(String, String, String, String, String, String, String, String, String): Employee
+    +deleteUser(String): boolean
+    +getUserByMail(String): User
+    -registerUser(User, boolean): User
 }
 
 Customer --> User
@@ -109,15 +161,15 @@ Employee --> User
 
 Car -- CarManager
 Request -- RequestManager
-Customer -- UserManager
-Employee -- UserManager
-Car -- Location
-Car -- Request
+User -- UserManager
+Address -- User
 Location -- Address
+Location -- LocationManager
+Car -- Location
+Car -- CarStatus
+Car -- Request
 Request -- Customer
 Request -- Employee
-Address -- User
-Car -- CAR_STATUS
-Request -- REQUEST_TYPE
-Request -- REQUEST_STATUS
+Request -- RequestStatus
+Request -- RequestType
 @enduml
