@@ -1,3 +1,4 @@
+@startuml
 enum CarStatus {
     +FOR_SALE
     +NOT_READY_FOR_SALE
@@ -5,3 +6,4 @@ enum CarStatus {
     +SOLD
     +INACTIVE
 }
+@enduml

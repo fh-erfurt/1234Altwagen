@@ -1,3 +1,4 @@
+@startuml
 class Request {
     -car: Car
     -employee: Employee
@@ -8,3 +9,4 @@ class Request {
     +Request(RequestType, Car, Customer, price)
     {method} getter und setter
 }
+@enduml

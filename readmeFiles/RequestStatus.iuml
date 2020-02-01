@@ -1,6 +1,8 @@
+@startuml
 enum RequestStatus {
     +PENDING
     +ACCEPTED
     +DENIED
     +CANCELLED
 }
+@enduml

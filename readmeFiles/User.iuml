@@ -1,3 +1,4 @@
+@startuml
 class User {
     #firstname: string
     #lastname: string
@@ -10,3 +11,4 @@ class User {
     +listCarsForSale(): ArrayList<Car>
     +listMyRequests(): ArrayList<Requests>
 }
+@enduml

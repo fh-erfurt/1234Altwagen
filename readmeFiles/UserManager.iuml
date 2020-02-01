@@ -1,3 +1,4 @@
+@startuml
 class UserManager {
     {static} -instance: UserManager
     -users: ArrayList<User>
@@ -9,3 +10,4 @@ class UserManager {
     +getUserByMail(String): User
     -registerUser(User, boolean): User
 }
+@enduml

@@ -1,3 +1,4 @@
+@startuml
 class LocationManager {
     {static} -instance: LocationManager
     -locations: ArrayList<Location>
@@ -7,3 +8,4 @@ class LocationManager {
     +deleteLocation(Address, String): boolean
     +getLocationsWithAvailableSpace(int): ArrayList<Location>
 }
+@enduml

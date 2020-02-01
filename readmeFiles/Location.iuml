@@ -1,3 +1,4 @@
+@startuml
 class Location {
     -address: Address
     -name: string
@@ -10,3 +11,4 @@ class Location {
     +equals(Object): boolean
     -increaseCarCount(): boolean
 }
+@enduml

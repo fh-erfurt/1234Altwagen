@@ -1,3 +1,4 @@
+@startuml
 class Customer {
     -requestCount: int
     -maxRequests: int
@@ -11,3 +12,4 @@ class Customer {
     +requestSellCar(Car): Request
     -createRequest(Car, RequestType, float): Request
 }
+@enduml

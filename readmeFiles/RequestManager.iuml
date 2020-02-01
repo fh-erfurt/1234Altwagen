@@ -1,3 +1,4 @@
+@startuml
 class RequestManager {
     {static} -instance: RequestManager
     -requests: ArrayList<Request>
@@ -8,3 +9,4 @@ class RequestManager {
     +getRequestsByType(RequestType): ArrayList<Request>
     +getRequestsByUser(User): ArrayList<Request>
 }
+@enduml

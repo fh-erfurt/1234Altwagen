@@ -1,3 +1,4 @@
+@startuml
 class Address {
     -country: string
     -city: string
@@ -8,3 +9,4 @@ class Address {
     {method} getter und setter
     +equals(Object): boolean
 }
+@enduml

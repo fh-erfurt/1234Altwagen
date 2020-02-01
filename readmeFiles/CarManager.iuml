@@ -1,3 +1,4 @@
+@startuml
 class CarManager {
     {static} -instance: CarManager
     -cars: ArrayList<Car>
@@ -11,3 +12,4 @@ class CarManager {
     +listCarsByLocation(Location): ArrayList<Car>
     -getIndexOfCarWithChassisNumber(String): int
 }
+@enduml
