@@ -1,0 +1,10 @@
+class Request {
+    -car: Car
+    -employee: Employee
+    -customer: Customer
+    -float: price
+    -type: RequestType
+    -status: RequestStatus
+    +Request(RequestType, Car, Customer, price)
+    {method} getter und setter
+}

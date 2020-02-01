@@ -1,0 +1,13 @@
+class Customer {
+    -requestCount: int
+    -maxRequests: int
+    +Customer(String, String, String, String, Address)
+    +cancelRequest(Request): boolean
+    +decreaseRequestCount(): void
+    +getActiveRequestCount(): int
+    +getMaximumRequestCount(): int
+    +requestBuyCar(Car): Request
+    +requestSellCar(String, String, int, String, String, String, float): Request
+    +requestSellCar(Car): Request
+    -createRequest(Car, RequestType, float): Request
+}

@@ -1,0 +1,14 @@
+class Car {
+    -chassisNumber: string
+    -constructionYear: int
+    -drivenKM: int
+    -price: float
+    -brand: string
+    -model: string
+    -note: string
+    -location: Location
+    -status: CarStatus
+    +Car(String, String, int, String, String, String, Location, CarStatus)
+    {method} getter und setter
+    +equals(Object): boolean
+}

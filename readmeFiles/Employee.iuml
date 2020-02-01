@@ -1,0 +1,9 @@
+class Employee {
+    +Employee(String, String, String, String, Address)
+    +sellCar(Car, float): bool
+    +acceptRequest(Request): bool
+    +changeCarLocation(Car, Location): boolean
+    +denyRequest(Request): bool
+    +getLocationsWithAvailableSpace(int): ArrayList<Location>
+    +listPendingRequests(): ArrayList<Request>
+}

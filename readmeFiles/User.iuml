@@ -1,0 +1,12 @@
+class User {
+    #firstname: string
+    #lastname: string
+    #eMail: string
+    #password: string
+    #userAddress: Address
+    +User(String, String, String, String, Address)
+    {method} getter und setter
+    +equals(Object): boolean
+    +listCarsForSale(): ArrayList<Car>
+    +listMyRequests(): ArrayList<Requests>
+}

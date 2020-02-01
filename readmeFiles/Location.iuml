@@ -1,0 +1,12 @@
+class Location {
+    -address: Address
+    -name: string
+    -maxCars: int
+    -carCount: int
+    +Location(Address, String, int, int)
+    {method} getter und setter
+    +addCar(Car): boolean
+    +decreaseCarCount(): boolean
+    +equals(Object): boolean
+    -increaseCarCount(): boolean
+}

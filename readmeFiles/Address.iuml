@@ -1,0 +1,10 @@
+class Address {
+    -country: string
+    -city: string
+    -zip: string
+    -street: string
+    -houseNumber: string
+    +Address(int, String, String, String, String, String, String)
+    {method} getter und setter
+    +equals(Object): boolean
+}

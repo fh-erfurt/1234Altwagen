@@ -1,0 +1,11 @@
+class UserManager {
+    {static} -instance: UserManager
+    -users: ArrayList<User>
+    {static} +getInstance(): UserManager
+    {static} +clearInstance(): void
+    +registerCustomer(String, String, String, String, String, String, String, String, String): Customer 
+    +registerEmployee(String, String, String, String, String, String, String, String, String): Employee
+    +deleteUser(String): boolean
+    +getUserByMail(String): User
+    -registerUser(User, boolean): User
+}

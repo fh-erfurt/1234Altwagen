@@ -1,0 +1,10 @@
+class RequestManager {
+    {static} -instance: RequestManager
+    -requests: ArrayList<Request>
+    {static} +getInstance(): RequestManager
+    {static} +clearInstance(): void
+    +addRequest(RequestType, Car, Customer, float): Request
+    +getRequestsByStatus(RequestStatus): ArrayList<Request>
+    +getRequestsByType(RequestType): ArrayList<Request>
+    +getRequestsByUser(User): ArrayList<Request>
+}

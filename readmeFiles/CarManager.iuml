@@ -1,0 +1,13 @@
+class CarManager {
+    {static} -instance: CarManager
+    -cars: ArrayList<Car>
+    {static} +getInstance(): CarManager
+    {static} +clearInstance(): void
+    +addNewCar(String, String, int, String, String, String, Location, CarStatus): Car
+    +addOrChangeCar(Car): boolean
+    +deleteCar(String): void
+    +getCarByChassisNumber(String): Car
+    +listCarsByStatus(CarStatus): ArrayList<Car>
+    +listCarsByLocation(Location): ArrayList<Car>
+    -getIndexOfCarWithChassisNumber(String): int
+}

@@ -1,0 +1,9 @@
+class LocationManager {
+    {static} -instance: LocationManager
+    -locations: ArrayList<Location>
+    {static} +getInstance(): LocationManager
+    {static} +clearInstance(): void
+    +addLocation(String, String, String, String, String, String, int, int): Location
+    +deleteLocation(Address, String): boolean
+    +getLocationsWithAvailableSpace(int): ArrayList<Location>
+}

@@ -1,0 +1,7 @@
+enum CarStatus {
+    +FOR_SALE
+    +NOT_READY_FOR_SALE
+    +ON_ACTIVE_REQUEST
+    +SOLD
+    +INACTIVE
+}
