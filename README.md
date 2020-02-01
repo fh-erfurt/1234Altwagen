@@ -69,54 +69,54 @@ Zur Übersicht werden im im folgenden Diagramm die Beziehungen der Klassen darge
 TODO: Beschreibung Singleton
 
 ### CarManager
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarManager.iuml)
+![1234Altwagen CarManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarManager.iuml)
 ### LocationManager
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/LocationManager.iuml)
+![1234Altwagen LocationManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/LocationManager.iuml)
 ### RequestManager
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestManager.iuml)
+![1234Altwagen RequestManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestManager.iuml)
 ### UserManager
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/UserManager.iuml)
+![1234Altwagen UserManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/UserManager.iuml)
 
 ## User Klassen
 
 ### User
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/User.iuml)
+![1234Altwagen User](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/User.iuml)
 
 ### Customer
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Customer.iuml)
+![1234Altwagen Customer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Customer.iuml)
 
 ### Employee
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Employee.iuml)
+![1234Altwagen Employee](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Employee.iuml)
 
 ## Car Klassen
 
 ### Car
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Car.iuml)
+![1234Altwagen Car](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Car.iuml)
 
 ### CarStatus
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarStatus.iuml)
+![1234Altwagen CarStatus](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarStatus.iuml)
 
 ## Request Klassen
 
 ### Request
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Request.iuml)
+![1234Altwagen Request](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Request.iuml)
 
 ### RequestStatus
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestStatus.iuml)
+![1234Altwagen RequestStatus](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestStatus.iuml)
 
 ### RequestType
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestType.iuml)
+![1234Altwagen RequestType](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/RequestType.iuml)
 
 ## Location / Address
 
 ### Location
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Location.iuml)
+![1234Altwagen Location](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Location.iuml)
 
 ### Address
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Address.iuml)
+![1234Altwagen Address](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Address.iuml)
 
 ## Exceptions
 
 ### CarCountBelowZeroException
-![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarCountBelowZeroException.iuml)
+![1234Altwagen CarCountBelowZeroException](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarCountBelowZeroException.iuml)
 
