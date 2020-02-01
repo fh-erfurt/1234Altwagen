@@ -57,6 +57,10 @@ class UserManager {
     -users: ArrayList<User>
 }
 
+class CarCountBelowZeroException {
+    -location: Location
+}
+
 Customer --> User
 Employee --> User
 
@@ -73,4 +77,5 @@ Request -- Customer
 Request -- Employee
 Request -- RequestStatus
 Request -- RequestType
+CarCountBelowZeroException -- Location
 @enduml

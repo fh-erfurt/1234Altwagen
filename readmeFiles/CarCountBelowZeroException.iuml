@@ -1,0 +1,5 @@
+class CarCountBelowZeroException {
+    -location: Location
+	+CarCountBelowZeroException(Location)
+	+getLocation(): Location
+}

@@ -156,6 +156,12 @@ class UserManager {
     -registerUser(User, boolean): User
 }
 
+class CarCountBelowZeroException {
+    -location: Location
+	+CarCountBelowZeroException(Location)
+	+getLocation(): Location
+}
+
 Customer --> User
 Employee --> User
 
@@ -172,4 +178,5 @@ Request -- Customer
 Request -- Employee
 Request -- RequestStatus
 Request -- RequestType
+CarCountBelowZeroException -- Location
 @enduml
