@@ -60,4 +60,4 @@ Nachfolgend ist die Projektstruktur abgebildet. Das (C) steht für Klasse und da
     
 ## Klassendiagram
 
-![1234Altwagen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/klassendiagramm.iuml)
+![1234Altwagen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/klassendiagramm.iuml)

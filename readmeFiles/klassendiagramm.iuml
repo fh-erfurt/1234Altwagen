@@ -1,0 +1,76 @@
+@startuml
+title 1234Altwagen - Class Diagram
+
+
+class CarManager {
+    -cars: ArrayList<Car>
+}
+
+class Car {
+    -location: Location
+    -status: CarStatus
+}
+
+enum CarStatus {
+}
+
+class Address {
+}
+
+class Location {
+    -address: Address
+}
+
+class LocationManager {
+    -locations: ArrayList<Location>
+}
+
+class Request {
+    -car: Car
+    -employee: Employee
+    -customer: Customer
+    -type: RequestType
+    -status: RequestStatus
+}
+
+class RequestManager {
+    -requests: ArrayList<Request>
+}
+
+enum RequestStatus {
+}
+
+enum RequestType {
+}
+
+class Customer {
+}
+
+class Employee {
+}
+
+class User {
+    #userAddress: Address
+}
+
+class UserManager {
+    -users: ArrayList<User>
+}
+
+Customer --> User
+Employee --> User
+
+Car -- CarManager
+Request -- RequestManager
+User -- UserManager
+Address -- User
+Location -- Address
+Location -- LocationManager
+Car -- Location
+Car -- CarStatus
+Car -- Request
+Request -- Customer
+Request -- Employee
+Request -- RequestStatus
+Request -- RequestType
+@enduml
