@@ -66,7 +66,7 @@ public class LocationManager {
     /**
      *
      * @param minSpace minimum available space which the location should have
-     * @return ArrayList of {@link Location} with at least the given {@param minSpace}
+     * @return ArrayList of {@link Location} with at least the given minSpace
      */
     public ArrayList<Location> getLocationsWithAvailableSpace(int minSpace){
         ArrayList<Location> locationList = new ArrayList<>();

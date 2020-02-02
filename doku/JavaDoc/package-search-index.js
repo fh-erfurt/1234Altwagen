@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"de.altwagen.Car"},{"l":"de.altwagen.domain"},{"l":"de.altwagen.Exceptions"},{"l":"de.altwagen.Request"},{"l":"de.altwagen.user"}]
