@@ -45,18 +45,15 @@ Nachfolgend ist die Projektstruktur abgebildet. Das (C) steht für Klasse und da
 ## Test Klassen
 * de.altwagen
   * car
-    * (C) CarTest
     * (C) CarManagerTest
   * domain
     * (C) LocationTest
     * (C) LocationManagerTest
   * Request
-    * (C) RequestTest
     * (C) RequestManagerTest
   * user
     * (C) CustomerTest
     * (C) EmployeeTest
-    * (C) UserTest
     * (C) UserManagerTest
     
 # Klassendiagramm
