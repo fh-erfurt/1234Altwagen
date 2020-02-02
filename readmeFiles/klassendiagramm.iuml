@@ -61,6 +61,10 @@ class CarCountBelowZeroException {
     -location: Location
 }
 
+class DeleteLocationWithCarsException {
+    -location: Location
+}
+
 Customer --> User
 Employee --> User
 
@@ -78,4 +82,5 @@ Request -- Employee
 Request -- RequestStatus
 Request -- RequestType
 CarCountBelowZeroException -- Location
+DeleteLocationWithCarsException -- Location
 @enduml

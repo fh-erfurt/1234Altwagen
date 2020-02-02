@@ -4,11 +4,12 @@ class Location {
     -name: string
     -maxCars: int
     -carCount: int
-    +Location(Address, String, int, int)
+    +Location(Address, String, int)
     {method} getter und setter
     +addCar(Car): boolean
-    +decreaseCarCount(): boolean
+    +removeCar(Car): boolean
     +equals(Object): boolean
+    -decreaseCarCount(): boolean
     -increaseCarCount(): boolean
 }
 @enduml

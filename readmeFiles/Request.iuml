@@ -6,7 +6,7 @@ class Request {
     -float: price
     -type: RequestType
     -status: RequestStatus
-    +Request(RequestType, Car, Customer, price)
+    +Request(RequestType, Car, Customer, float)
     {method} getter und setter
 }
 @enduml

@@ -1,0 +1,7 @@
+@startuml
+class DeleteLocationWithCarsException {
+    -location: Location
+	+DeleteLocationWithCarsException(Location)
+	+getLocation(): Location
+}
+@enduml

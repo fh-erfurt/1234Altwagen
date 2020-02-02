@@ -4,8 +4,8 @@ class LocationManager {
     -locations: ArrayList<Location>
     {static} +getInstance(): LocationManager
     {static} +clearInstance(): void
-    +addLocation(String, String, String, String, String, String, int, int): Location
-    +deleteLocation(Address, String): boolean
+    +addLocation(String, String, String, String, String, String, int): Location
+    +deleteLocation(Address): boolean
     +getLocationsWithAvailableSpace(int): ArrayList<Location>
 }
 @enduml
