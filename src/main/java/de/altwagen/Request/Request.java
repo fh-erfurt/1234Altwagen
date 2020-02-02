@@ -4,6 +4,9 @@ import de.altwagen.Car.Car;
 import de.altwagen.user.Customer;
 import de.altwagen.user.Employee;
 
+/**
+ * This class defines a Request, which is created by a user to buy or sell a car from 1234Altwagen
+ */
 public class Request {
 
     private Car car;

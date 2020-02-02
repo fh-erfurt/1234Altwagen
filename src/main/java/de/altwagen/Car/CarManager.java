@@ -4,6 +4,9 @@ import de.altwagen.domain.Location;
 
 import java.util.ArrayList;
 
+/**
+ * This singleton-class manages all cars. Cars should only be created and deleted through this class.
+ */
 public class CarManager {
     private static CarManager instance;
 

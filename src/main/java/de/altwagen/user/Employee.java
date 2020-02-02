@@ -13,6 +13,9 @@ import de.altwagen.domain.LocationManager;
 
 import java.util.ArrayList;
 
+/**
+ * This extended class of user specifies what the employee is able to do.
+ */
 public class Employee extends User {
 
     public Employee(String firstname, String lastname, String eMail, String passwort, Address userAddress) {

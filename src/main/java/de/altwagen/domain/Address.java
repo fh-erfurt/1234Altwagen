@@ -1,5 +1,8 @@
 package de.altwagen.domain;
 
+/**
+ * This class specifies a postal address
+ */
 public class Address {
 
     private String country;

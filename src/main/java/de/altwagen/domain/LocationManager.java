@@ -5,6 +5,9 @@ import de.altwagen.Exceptions.DeleteLocationWithCarsException;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+/**
+ * This singleton-class manages all Locations. Locations should only be created and deleted through this class.
+ */
 public class LocationManager {
     private static LocationManager instance;
 

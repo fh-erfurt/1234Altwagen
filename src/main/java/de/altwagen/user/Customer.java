@@ -11,6 +11,9 @@ import de.altwagen.Request.RequestType;
 
 import java.util.ArrayList;
 
+/**
+ * This extended class of user specifies what the customer is able to do. The customer has also a maximum count of active requests.
+ */
 public class Customer extends User {
 
     private int requestCount = 0;

@@ -9,6 +9,9 @@ import de.altwagen.domain.Address;
 
 import java.util.ArrayList;
 
+/**
+ * This abstracted class defines all fields and methods the customer and employee have.
+ */
 public abstract class User {
 
     protected String firstname;

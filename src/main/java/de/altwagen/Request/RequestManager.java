@@ -7,6 +7,9 @@ import de.altwagen.user.User;
 
 import java.util.ArrayList;
 
+/**
+ * This singleton-class manages all requests. requests should only be created and deleted through this class.
+ */
 public class RequestManager {
     private static RequestManager instance;
 

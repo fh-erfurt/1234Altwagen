@@ -3,6 +3,9 @@ package de.altwagen.domain;
 import de.altwagen.Car.Car;
 import de.altwagen.Exceptions.CarCountBelowZeroException;
 
+/**
+ * This class defines a Location with a name, where the cars of 1234Altwagen are stored. It has a maximum capacity of cars
+ */
 public class Location {
 
     //Class variables all private

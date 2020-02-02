@@ -1,5 +1,8 @@
 package de.altwagen.Request;
 
+/**
+ * This Enumeration defines different status of a request
+ */
 public enum RequestStatus
 {
     PENDING,    // new request

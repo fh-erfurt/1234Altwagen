@@ -5,6 +5,10 @@ import de.altwagen.domain.Address;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+/**
+ * This singleton-class manages all users. Users should only be created and deleted through this class.
+ * Both (Customer and Employee) are stored in a single ArrayList.
+ */
 public class UserManager {
 
     private static UserManager instance;

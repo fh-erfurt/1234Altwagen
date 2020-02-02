@@ -2,6 +2,10 @@ package de.altwagen.Car;
 
 import de.altwagen.domain.Location;
 
+/**
+ * This class contains all information of a car
+ * A Car should be created by the addNewCar-method of the {@link CarManager}-class
+ */
 public class Car {
 
     //Class variables all private
