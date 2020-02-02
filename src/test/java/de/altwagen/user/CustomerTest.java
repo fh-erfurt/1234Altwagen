@@ -42,7 +42,6 @@ class CustomerTest {
 
     @Test
     void shouldCreateRequestSellCar() {
-        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",NOT_READY_FOR_SALE);
         Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
         Request request = customer.requestSellCar("z1a2b3c4d", "2000", 123, "Tesla", "Testmodel", "Note", 30000);
