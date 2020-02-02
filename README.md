@@ -63,13 +63,18 @@ Zur Übersicht werden im im folgenden Diagramm die Beziehungen der Klassen darge
 ![1234Altwagen Klassenbeziehungen](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/klassendiagramm.iuml)
 
 # Klassen
+Nachfolgend sind die Felder und Methoden der einzelnen Klassen dargestellt. Für die Übersichtlichkeit werden die Getter und Setter nicht mit angezeigt.
 
 ## Manager Klassen
 
-TODO: Beschreibung Singleton
+Die Manager Klassen verwalten die jeweiligen Klassen in Form von ArrayListen. Sie sind als Singleton-Klassen definiert. Über die Funktion getInstance() wird eine neue Instance oder die vorhandene der Managerklasse zurückgegeben. Das hat den Zweck, dass man von überall auf die selben ArrayListen zugreifen kann.
 
 ### CarManager
 ![1234Altwagen CarManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarManager.iuml)
+
+Bemerkungen:
+* Die Funktion addNewCar initialisiert ein neues Auto immer mit der Location *null*. Sobald das Auto zum Händler gehört sollte das Auto einer Location zugeordnet werden.
+
 ### LocationManager
 ![1234Altwagen LocationManager](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/LocationManager.iuml)
 ### RequestManager
@@ -82,8 +87,15 @@ TODO: Beschreibung Singleton
 ### User
 ![1234Altwagen User](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/User.iuml)
 
+Bemerkungen:
+* Die equals-Methode vergleicht auf die Gleichheit der E-Mails, da jeder Nutzer eine eindeutige E-Mail besitzen sollte
+* listMyRequests() zeigt alle Requests ungeachtet des RequestType und des RequestStatus zu der dieser User gehört, ob als Customer oder Employee
+
 ### Customer
 ![1234Altwagen Customer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Customer.iuml)
+
+Bemerkungen:
+* decreaseRequestCount sollte nicht extern aufgerufen werden. Die Funktion wird automatisch aufgerufen, wenn eine Request akzeptiert, abgelehnt oder abgebrochen wird.
 
 ### Employee
 ![1234Altwagen Employee](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Employee.iuml)
@@ -92,6 +104,9 @@ TODO: Beschreibung Singleton
 
 ### Car
 ![1234Altwagen Car](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Car.iuml)
+
+Bemerkungen:
+* Die equals-Methode prüft auf Gleichheit der chassisNumber, da jedes Auto eine eindeutige Fahrgestellnummer haben soll
 
 ### CarStatus
 ![1234Altwagen CarStatus](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarStatus.iuml)
@@ -112,11 +127,20 @@ TODO: Beschreibung Singleton
 ### Location
 ![1234Altwagen Location](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Location.iuml)
 
+Bemerkungen:
+* Die equals-Methode prüft auf Gleichheit der Adresse, da keine zwei Standorte an einer Adresse sein können.
+
 ### Address
 ![1234Altwagen Address](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/Address.iuml)
+
+Bemerkungen:
+* Die equals-Methode prüft auf Gleichheit aller felder
 
 ## Exceptions
 
 ### CarCountBelowZeroException
 ![1234Altwagen CarCountBelowZeroException](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/CarCountBelowZeroException.iuml)
+
+### DeleteLocationWithCarsException
+![1234Altwagen DeleteLocationWithCarsException](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/fh-erfurt/1234Altwagen/master/readmeFiles/DeleteLocationWithCarsException.iuml)
 
