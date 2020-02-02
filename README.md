@@ -30,6 +30,7 @@ Nachfolgend ist die Projektstruktur abgebildet. Das (C) steht für Klasse und da
     * (C) LocationManager
   * exceptions
     * (C) CarCountBelowZeroException
+    * (C) DeleteLocationWithCarsException
   * request
     * (C) Request
     * (C) RequestManager
