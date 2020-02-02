@@ -13,7 +13,7 @@ Das Ziel von 1234Altwagen ist eine Platform zu schaffen, auf der Nutzer ihre Geb
   * von Kunden gekaufte Autos zu einem bestimmten Preis zum Verkauf anbieten
   
 # Paketstrukturierung
-Der Quellcode ist in 5 Unterpakete des Paketes *de.altwagen* gegliedert. Sie sind nach den zu verwaltenden Objekten gegliedert. Das "car"-package beinhaltet alle Klassen, die zum Verwalten von Autos gehören. Das "domain"-package dient dem Verwalten der Adressklasse und von den Standorten von 1234Altwagen. Das "exceptions"-package enthält alle Exception-Klassen. Das "request"-Package kümmert sich um die Verwaltung der Anfragen der Nutzer. In dem "user"-package findet die gesamte Nutzerverwaltung (Kunde und Mitarbeiter) statt.
+Der Quellcode ist in 5 Unterpakete des Paketes *de.altwagen* gegliedert. Sie sind nach den zu verwaltenden Objekten gegliedert. Das *car*-package beinhaltet alle Klassen, die zum Verwalten von Autos gehören. Das *domain*-package dient dem Verwalten der Adressklasse und von den Standorten von 1234Altwagen. Das *exceptions*-package enthält alle Exception-Klassen. Das *request*-Package kümmert sich um die Verwaltung der Anfragen der Nutzer. In dem *user*-package findet die gesamte Nutzerverwaltung (Kunde und Mitarbeiter) statt.
 
 Zu jeder Klasse, welche ausreichend Code enthält existiert eine dazugehörige Testklasse im selben package.
 
