@@ -30,7 +30,7 @@ public class Customer extends User {
 
     public Request requestSellCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, float price){
         CarManager carManager = CarManager.getInstance();
-        Car car = carManager.addNewCar(chassisNumber, constructionYear, drivenKM, brand, model, note, null, CarStatus.INACTIVE);
+        Car car = carManager.addNewCar(chassisNumber, constructionYear, drivenKM, brand, model, note, CarStatus.INACTIVE);
 
         if(car != null) {
             return requestSellCar(car, price);

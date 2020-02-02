@@ -21,27 +21,27 @@ public class CarManagerTest {
         CarManager.clearInstance();
         carManager = CarManager.getInstance();
         musterAddress = new Address("Musterland", "Musterstadt", "99085", "Musterstraße", "1");
-        musterLocation = new Location(musterAddress, "Gebäude A", 50, 25);
+        musterLocation = new Location(musterAddress, "Gebäude A", 50);
     }
 
     @Test
     void carShouldBeAdded(){
-        Car musterCar = carManager.addNewCar("123ABC", "2000", 1000, "VW", "Golf", "blau", musterLocation, CarStatus.FOR_SALE);
+        Car musterCar = carManager.addNewCar("123ABC", "2000", 1000, "VW", "Golf", "blau", CarStatus.FOR_SALE);
         assertNotNull(musterCar, "car should be added");
     }
 
     @Test
-    void carShouldBeAddedOrChanged(){
+    void carShouldBeAddedAndChanged(){
+        Car musterCar = new Car("123ABC", "2000", 1000, "VW", "Golf", "blau", null, CarStatus.FOR_SALE);
 
-        // Kein Plan ob das hier stimmt
+        carManager.addOrChangeCar(musterCar);
 
-        Car musterCar = carManager.addNewCar("123ABC", "2000", 1000, "VW", "Golf", "blau", musterLocation, CarStatus.FOR_SALE);
+        assertEquals(carManager.getCarByChassisNumber("123ABC"), musterCar, "car should be added!");
 
-        // Prerequisite: car has to be added before changing it
-        assertNotNull(musterCar, "prerequisite failed: car should be added!");
+        Car newCar = new Car("123ABC", "2000", 1000, "VW", "Golf", "red", null, CarStatus.FOR_SALE);
+        carManager.addOrChangeCar(newCar);
 
-        // test
-        Car newCar = (Car) carManager.getCarByChassisNumber(musterCar.getChassisNumber());
-        assertEquals(newCar, musterCar, "newCar and musterCar should be equal");
+        assertEquals(carManager.getCarByChassisNumber("123ABC").getNote(), "red", "car should be changed");
+
     }
 }

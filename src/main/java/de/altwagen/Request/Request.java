@@ -18,7 +18,7 @@ public class Request {
         this.car = car;
         this.customer = customer;
         this.price = price;
-        this.employee = null; // TODO Employee zuweisen
+        this.employee = null;
         this.status = RequestStatus.PENDING;
     }
 

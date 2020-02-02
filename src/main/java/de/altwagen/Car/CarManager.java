@@ -34,15 +34,14 @@ public class CarManager {
      * @param brand
      * @param model
      * @param note
-     * @param location
      * @param status
      * @return added Car or null if a car with the given chassisNumber exists already
      */
-    public Car addNewCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, Location location, CarStatus status) {
+    public Car addNewCar(String chassisNumber, String constructionYear, int drivenKM, String brand, String model, String note, CarStatus status) {
         //check if car is already in list (check for chassisNumber)
         if(getIndexOfCarWithChassisNumber(chassisNumber) != -1)
             return null;
-        Car car = new Car(chassisNumber, constructionYear, drivenKM, brand, model, note, location, status);
+        Car car = new Car(chassisNumber, constructionYear, drivenKM, brand, model, note, null, status);
         cars.add(car);
 
         return car;

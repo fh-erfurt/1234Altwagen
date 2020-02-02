@@ -11,11 +11,11 @@ public class Location {
     private int maxCars;
     private int carCount;
 
-    public Location(Address address, String name, int maxCars, int carCount) {
+    public Location(Address address, String name, int maxCars) {
         this.address = address;
         this.name = name;
         this.maxCars = maxCars;
-        this.carCount = carCount;
+        this.carCount = 0;
     }
 
     //region Getter and Setter
@@ -74,10 +74,10 @@ public class Location {
         if(carCount >= maxCars){
             return false;
         }
-        boolean result = false;
+        boolean result = true;
         Location oldLocation = car.getLocation();
         if (oldLocation != null){
-            result = oldLocation.decreaseCarCount();
+            result = oldLocation.removeCar(car);
         }
         if(result) {
             result = increaseCarCount();
@@ -88,7 +88,14 @@ public class Location {
         return result;
     }
 
-    public boolean decreaseCarCount() throws CarCountBelowZeroException {
+    public boolean removeCar(Car car) throws CarCountBelowZeroException{
+        if(decreaseCarCount()){
+            car.setLocation(null);
+        }
+        return true;
+    }
+
+    private boolean decreaseCarCount() throws CarCountBelowZeroException {
         if(carCount > 0){
             --carCount;
             return true;
