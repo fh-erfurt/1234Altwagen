@@ -42,10 +42,10 @@ class CustomerTest {
 
     @Test
     void shouldCreateRequestSellCar() {
-        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",locationManager.addLocation("germany","Erfurt", "99086", "LeuneburgUfer", "2","Test",5, 2),NOT_READY_FOR_SALE);
+        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",NOT_READY_FOR_SALE);
         Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
-        Request request = customer.requestSellCar(car,5000);
+        Request request = customer.requestSellCar("z1a2b3c4d", "2000", 123, "Tesla", "Testmodel", "Note", 30000);
 
         assertNotNull(request, "request should be created");
         assertEquals(request.getType(),SELL,"request type should be SELL");
@@ -55,7 +55,7 @@ class CustomerTest {
     @Test
     void shouldCreateRequestBuyCar() {
 
-        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",locationManager.addLocation("germany","Erfurt", "99086", "LeuneburgUfer", "2","Test",5, 2),NOT_READY_FOR_SALE);
+        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",NOT_READY_FOR_SALE);
         Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
         Request request = customer.requestBuyCar(car,5000);
@@ -68,7 +68,7 @@ class CustomerTest {
     @Test
     void cancelRequest() {
 
-        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",locationManager.addLocation("germany","Erfurt", "99086", "LeuneburgUfer", "2","Test",5, 2),NOT_READY_FOR_SALE);
+        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",NOT_READY_FOR_SALE);
         Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
         Request request = customer.requestBuyCar(car,5000);
@@ -80,7 +80,7 @@ class CustomerTest {
 
     @Test
     void decreaseRequestCount() {
-        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",locationManager.addLocation("germany","Erfurt", "99086", "LeuneburgUfer", "2","Test",5, 2),NOT_READY_FOR_SALE);
+        Car car = carManager.addNewCar("z1a2b3c4d","2000", 123, "Tesla", "Testmodel","Note",NOT_READY_FOR_SALE);
         Customer customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
 
         Request request = customer.requestBuyCar(car,5000);
