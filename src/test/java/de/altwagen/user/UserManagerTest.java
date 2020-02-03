@@ -60,10 +60,4 @@ public class UserManagerTest {
         Employee newEmployee = (Employee) userManager.getUserByEMail(employee.eMail);
         assertEquals(newEmployee, employee, "newEmployee and employee should be identical!");
     }
-
-    @Test
-    void tmp(){
-        User customer = userManager.registerCustomer("Max", "Mustermann", "mm@fh-erfurt.de", "1234a", "Deutschland", "Erfurt", "99087", "Altonaer Straße", "1");
-        assertTrue(customer instanceof Customer);
-    }
 }
