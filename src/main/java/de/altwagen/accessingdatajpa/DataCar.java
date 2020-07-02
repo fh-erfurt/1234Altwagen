@@ -47,7 +47,7 @@ public class DataCar {
     @Override
     public String toString() {
         return String.format(
-                "Customer[car_id=%d, createdAt='%ts', updatedAt='%ts', chassisNumber='%s', constructionYear='%d', drivenKM='%d', price='%f', brand='%s', model='%s', note='%s', status='%s', location_location_id='%d']",
+                "Car[car_id='%d', createdAt='%ts', updatedAt='%ts', chassisNumber='%s', constructionYear='%d', drivenKM='%d', price='%f', brand='%s', model='%s', note='%s', status='%s', location_location_id='%d']",
                 car_id, createdAt, updatedAt, chassisNumber, constructionYear, drivenKM, price, brand, model, note, status, location_location_id);
     }
 
