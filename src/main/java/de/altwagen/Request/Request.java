@@ -4,11 +4,19 @@ import de.altwagen.Car.Car;
 import de.altwagen.user.Customer;
 import de.altwagen.user.Employee;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * This class defines a Request, which is created by a user to buy or sell a car from 1234Altwagen
  */
+@Entity
 public class Request {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Car car;
     private Customer customer;
     private Employee employee;

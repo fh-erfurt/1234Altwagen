@@ -9,13 +9,20 @@ import de.altwagen.Car.Car;
 import de.altwagen.Request.Request;
 import de.altwagen.Request.RequestType;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
  * This extended class of user specifies what the customer is able to do. The customer has also a maximum count of active requests.
  */
+@Entity
 public class Customer extends User {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int requestCount = 0;
     private final int maxRequests = 2;
 

@@ -7,13 +7,20 @@ import de.altwagen.Request.Request;
 import de.altwagen.Request.RequestManager;
 import de.altwagen.domain.Address;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
  * This abstracted class defines all fields and methods the customer and employee have.
  */
+@Entity
 public abstract class User {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     protected String firstname;
     protected String lastname;
     protected String eMail;

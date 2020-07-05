@@ -3,12 +3,20 @@ package de.altwagen.domain;
 import de.altwagen.Car.Car;
 import de.altwagen.Exceptions.CarCountBelowZeroException;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * This class defines a Location with a name, where the cars of 1234Altwagen are stored. It has a maximum capacity of cars
  */
+@Entity
 public class Location {
 
     //Class variables all private
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Address address;
     private String name;
     private int maxCars;

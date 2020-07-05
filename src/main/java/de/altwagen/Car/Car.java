@@ -2,13 +2,21 @@ package de.altwagen.Car;
 
 import de.altwagen.domain.Location;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * This class contains all information of a car
  * A Car should be created by the addNewCar-method of the {@link CarManager}-class
  */
+@Entity
 public class Car {
 
     //Class variables all private
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private String chassisNumber;
     private String constructionYear;
     private int drivenKM;

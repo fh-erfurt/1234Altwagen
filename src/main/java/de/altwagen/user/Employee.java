@@ -11,12 +11,24 @@ import de.altwagen.Car.Car;
 import de.altwagen.domain.Location;
 import de.altwagen.domain.LocationManager;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
  * This extended class of user specifies what the employee is able to do.
  */
+@Entity
 public class Employee extends User {
+
+    /*
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+
+    Wegen fehlenden eintigartigen variablen
+    */
 
     public Employee(String firstname, String lastname, String eMail, String passwort, Address userAddress) {
         super(firstname, lastname, eMail, passwort, userAddress);
