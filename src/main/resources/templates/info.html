@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>1234Altwagen</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../styles/css/index.css}"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"> <!--div th:replace="fragments/header :: ${#authentication.principal.isAdmin()} ? 'header-admin' : 'header'" --></div>
+
+    <div>
+        Information
+    </div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

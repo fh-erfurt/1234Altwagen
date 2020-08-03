@@ -1,0 +1,71 @@
+
+
+
+.header {
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 5%;
+    margin: 5%;
+    background-color:rgba(10,10,10,0.9);
+    float: top;
+}
+
+
+.header-left {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+
+    float: left;
+}
+
+.header-left a{
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding: 5px
+    margin: 10px;
+    font-size: 17px;
+    background-color: black;
+}
+
+.header-left a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+
+
+
+body{
+    background-color: green;
+
+}
+
+
+.body{
+    position: absolute;
+    display: block;
+    top: 15%;
+    height:
+    width:
+    margin: 15px;
+
+}
+
+
+
+
+
+
+
+.footer{
+    position: absolute;
+       display: block;
+    float: bottom;
+    bottom: 3%;
+}

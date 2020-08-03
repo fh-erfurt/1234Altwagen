@@ -1,0 +1,36 @@
+
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <link rel="stylesheet" type="text/css" th:href="@{../../styles/css/index.css}"/>
+
+    <div class="header" th:fragment="header">
+        <div class="header-left">
+            <a th:href="@{../}">Home</a>
+            <a th:href="@{/shop.html}">Shop</a>
+            <a th:href="@{/info.html}">Info</a>
+        </div>
+
+    </div>
+
+
+    <div class="header-right" th:fragment="header-right">
+        <p>Normal Header</p>
+        <ul>
+            <li>Login</li>
+            <li>Shop</li>
+        </ul>
+    </div>
+
+    <div class="header-right" th:fragment="header-right-admin">
+        <p>Admin Header</p>
+    </div>
+
+
+    <div class="header-right" th:replace="fragments/header :: header-right">
+
+    </div>
+
+
+</body>
+
+
